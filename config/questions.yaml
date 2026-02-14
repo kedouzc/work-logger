@@ -1,0 +1,95 @@
+# Work Logger 交互式问题配置
+# 修改此文件即可自定义提问内容，无需修改代码
+
+# 晨间计划问题
+morning:
+  title: "晨间计划"
+  description: "让我们规划今天的工作"
+  questions:
+    - id: "goal"
+      text: "今天您的主要工作目标是什么？"
+      hint: "例如：完成XX功能开发、修复YY问题"
+      required: true
+      
+    - id: "tasks"
+      text: "今天计划完成哪些具体任务？"
+      hint: "请列出2-3个主要任务，用逗号或换行分隔"
+      required: true
+      
+    - id: "challenges"
+      text: "今天可能遇到什么挑战或风险？"
+      hint: "例如：技术难点、依赖阻塞、时间紧张等"
+      required: false
+      
+    - id: "priority"
+      text: "今天最重要的一件事是什么？"
+      hint: "只选一件最关键的事"
+      required: true
+
+# 晚间回顾问题
+evening:
+  title: "工作回顾"
+  description: "让我们总结今天的工作"
+  questions:
+    - id: "completed"
+      text: "今天实际完成了哪些任务？"
+      hint: "请列出实际完成的工作"
+      required: true
+      
+    - id: "problems"
+      text: "今天遇到了什么问题或困难？"
+      hint: "技术问题、沟通问题、工具问题等"
+      required: false
+      
+    - id: "solutions"
+      text: "这些问题是如何解决的？"
+      hint: "您的解决思路和方法"
+      required: false
+      
+    - id: "lessons"
+      text: "今天有什么收获或经验教训？"
+      hint: "技术收获、工作方法、沟通技巧等"
+      required: false
+      
+    - id: "tomorrow"
+      text: "明天计划做什么？"
+      hint: "简要描述明天的主要工作"
+      required: false
+
+# 模板配置
+templates:
+  plan_filename: "{date}-plan.md"
+  review_filename: "{date}-review.md"
+  
+  plan_template: |
+    # {date} 工作计划
+
+    ## 今日目标
+
+    {goal}
+
+    ## 主要任务
+
+    {tasks}
+
+    {challenges_section}
+    ## 最高优先级
+
+    {priority}
+
+    ---
+    *创建于 {time}*
+
+  review_template: |
+    # {date} 工作回顾
+
+    ## 今日完成任务
+
+    {completed}
+
+    {problems_section}
+    {solutions_section}
+    {lessons_section}
+    {tomorrow_section}
+    ---
+    *创建于 {time}*

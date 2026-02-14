@@ -1,0 +1,5 @@
+# Work Logger 依赖
+# 安装命令: pip install -r requirements.txt
+
+# YAML 解析（用于配置文件）
+PyYAML>=6.0

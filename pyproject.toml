@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "work-logger-bot"
+version = "1.0.0"
+description = "智能工作记录助手 - 自动化管理工作日志"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+keywords = ["work", "logger", "productivity", "tracking", "daily"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Office/Business :: Scheduling",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+
+[project.scripts]
+work-logger = "work_logger.cli:main"
+wl = "work_logger.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/work-logger-bot"
+Repository = "https://github.com/yourusername/work-logger-bot"
+Issues = "https://github.com/yourusername/work-logger-bot/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["work_logger*"]
